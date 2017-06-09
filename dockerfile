@@ -9,6 +9,10 @@ COPY update_db.sh /seqdb/scripts/
 
 ENV PATH=/seqdb/scripts/:${PATH}
 
+# setup site
+
+COPY seqdb.conf /etc/apache2/sites-available/
+
 # start services
 
 ENTRYPOINT ["start.sh"]
